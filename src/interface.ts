@@ -79,7 +79,7 @@ export interface InjectVisitor {
 type Pretty<T> = {
   [key in keyof T]:
   T[key] extends (...args: any[])=> any
-  ? (...args: Parameters<T[key]>)=> ReturnType<T[key]>
+  ? (...args: Parameters<T[key]>)=> any
   : T[key] & NonNullable<unknown>
 } & NonNullable<unknown>
 
